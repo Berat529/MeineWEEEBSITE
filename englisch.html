@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>English — Quiz</title>
+  <link rel="stylesheet" href="englisch.css">
+</head>
+<body>
+  <header>
+    <h1>English — Quiz</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Short Quiz (English)</h2>
+      <p>Answer the questions. Solutions are shown below.</p>
+
+      <form id="eng-quiz">
+        <ol>
+          <li>
+            <p>Choose the correct past tense of "go".</p>
+            <label><input type="radio" name="q1" value="a"> a) goed</label><br>
+            <label><input type="radio" name="q1" value="b"> b) went</label><br>
+            <label><input type="radio" name="q1" value="c"> c) gone</label>
+          </li>
+
+          <li>
+            <p>Which word is a noun?</p>
+            <label><input type="radio" name="q2" value="a"> a) quickly</label><br>
+            <label><input type="radio" name="q2" value="b"> b) beauty</label><br>
+            <label><input type="radio" name="q2" value="c"> c) run</label>
+          </li>
+
+          <li>
+            <p>Fill in: I ____ apples every day.</p>
+            <label><input type="radio" name="q3" value="a"> a) eat</label><br>
+            <label><input type="radio" name="q3" value="b"> b) eats</label><br>
+            <label><input type="radio" name="q3" value="c"> c) eating</label>
+          </li>
+        </ol>
+
+        <p>
+          <button type="button" id="check-eng">Check answers</button>
+          <button type="button" id="show-sol">Show solutions</button>
+        </p>
+
+        <div id="eng-result" aria-live="polite"></div>
+      </form>
+
+      <p><a href="index.html">Back to Home</a></p>
+
+      <script>
+        (function () {
+          var correct = { q1: 'b', q2: 'b', q3: 'a' };
+          var checkBtn = document.getElementById('check-eng');
+          var res = document.getElementById('eng-result');
+          var showBtn = document.getElementById('show-sol');
+          checkBtn.addEventListener('click', function () {
+            var score = 0;
+            ['q1','q2','q3'].forEach(function (k) {
+              var el = document.querySelector('input[name="'+k+'"]:checked');
+              if (el && el.value === correct[k]) score++;
+            });
+            res.textContent = 'Correct answers: ' + score + ' of 3';
+          });
+          showBtn.addEventListener('click', function () {
+            alert('Solutions:\n1) b) went\n2) b) beauty\n3) a) eat');
+          });
+        })();
+      </script>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Berats Platform</p>
+  </footer>
+</body>
+</html>

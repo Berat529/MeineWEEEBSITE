@@ -1,0 +1,88 @@
+/* Basis-Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    
+ 
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #333;
+}
+
+/* Main */
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #eee;
+    margin-top: 2rem;
+}
+
+/* Buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Anchor-styled buttons (for JS-free interaction) */
+a.button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+a.button:hover {
+    background-color: #45a049;
+}

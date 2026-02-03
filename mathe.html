@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mathe — Quiz</title>
+  <link rel="stylesheet" href="mathe.css">
+</head>
+<body>
+  <header>
+    <h1>Mathe — Quiz</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Kurzes Quiz</h2>
+      <p>Beantworte die Fragen. Die Lösungen stehen weiter unten.</p>
+
+      <form id="math-quiz">
+        <ol>
+          <li>
+            <p>Was ist 7 + 8?</p>
+            <label><input type="radio" name="q1" value="a"> a) 13</label><br>
+            <label><input type="radio" name="q1" value="b"> b) 15</label><br>
+            <label><input type="radio" name="q1" value="c"> c) 14</label>
+          </li>
+
+          <li>
+            <p>Wieviel ist 9 × 6?</p>
+            <label><input type="radio" name="q2" value="a"> a) 54</label><br>
+            <label><input type="radio" name="q2" value="b"> b) 45</label><br>
+            <label><input type="radio" name="q2" value="c"> c) 36</label>
+          </li>
+
+          <li>
+            <p>Wenn ein Rechteck Breite 4 und Länge 7 hat, wie groß ist die Fläche?</p>
+            <label><input type="radio" name="q3" value="a"> a) 11</label><br>
+            <label><input type="radio" name="q3" value="b"> b) 28</label><br>
+            <label><input type="radio" name="q3" value="c"> c) 14</label>
+          </li>
+        </ol>
+
+        <p>
+          <button type="button" id="check-math">Prüfen</button>
+          <button type="button" id="show-solutions">Lösungen anzeigen</button>
+        </p>
+
+        <div id="math-result" aria-live="polite"></div>
+
+      </form>
+
+      <p><a href="index.html">Zurück zur Startseite</a></p>
+
+      <script>
+          var correct = { q1: 'b', q2: 'a', q3: 'b' };
+          var checkBtn = document.getElementById('check-math');
+          var res = document.getElementById('math-result');
+          var showBtn = document.getElementById('show-solutions');
+          checkBtn.addEventListener('click', function () {
+            var score = 0;
+            ['q1','q2','q3'].forEach(function (k) {
+              var el = document.querySelector('input[name="'+k+'"]:checked');
+              if (el && el.value === correct[k]) score++;
+            });
+            res.textContent = 'Richtige Antworten: ' + score + ' von 3';
+          });
+          showBtn.addEventListener('click', function () {
+            alert('Lösungen:\n1) b) 15\n2) a) 54\n3) b) 28');
+          });
+      </script>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Berats Lernplattform</p>
+  </footer>
+</body>
+</html>
